@@ -5,7 +5,7 @@ const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
 
 authController.authenticate = (req, res, next) => {
   try {
-    const tokenString = req.header.authorization;
+    const tokenString = req.headers.authorization;
 
     if (!tokenString) {
       throw new Error("invalid token");
